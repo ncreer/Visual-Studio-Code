@@ -1,0 +1,7 @@
+fname = input("What is your first name: ")
+lname = input("What is your last name: ")
+age = int(input("What is your age: "))
+print("Hello there, " + fname, lname + '!')
+print('Age: ' + str(age))
+print(f"Hello there, {fname} {lname}!")
+print(f"Age: {str(age)}") 
