@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    background-color: #737373;
+}
+#circles {
+    width: 100%;
+}
+.logos {
+    border-radius: 50%;
+    width: 20%;
+    border: 20px solid black ;
+    margin: 0 4%;
+}
+#logospan {
+
+}
+#logodiv {
+    padding: 50px 0;
+    text-align: center;
+}
