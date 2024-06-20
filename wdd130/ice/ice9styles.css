@@ -37,6 +37,10 @@ body {
     border-left: 2px solid #5e6d86;
     width: 98px;
 }
+.first {
+    color: #415c8c;
+    margin-bottom: 5px;
+}
 .top {
     grid-row: 1/2;
     align-self: end;
@@ -64,11 +68,10 @@ body {
     color: #8e838e;
     font-size: 18px;
 }
-.first {
-    color: #415c8c;
-    margin-bottom: 5px;
-}
 h1 {
     font-size: 38px;
     margin-top: 0;
+}
+sup {
+    font-size: 17px;
 }
