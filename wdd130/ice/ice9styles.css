@@ -1,0 +1,74 @@
+body {
+    background-color: black;
+}
+.card {
+    width: 300px;
+    overflow: hidden;
+    margin: auto;
+    text-align: center;
+    border-radius: 15px;
+    background-color: white;
+}
+.grid {
+    background-color: #3f5b8b;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1;
+}
+.grid1 {
+    grid-column: 1/2;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border-right: 2px solid #5e6d86;
+    width: 98px;
+}
+.grid2 {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border-left: 2px solid #5e6d86;
+    border-right: 2px solid #5e6d86;
+    width: 98px;
+}
+.grid3 {
+    grid-column: 3/4;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    border-left: 2px solid #5e6d86;
+    width: 98px;
+}
+.top {
+    grid-row: 1/2;
+    align-self: end;
+    font-size: 25px;
+    margin-bottom: 3px;
+    margin-top: 18px;
+    color: white;
+}
+.bottom {
+    grid-row: 2/3;
+    align-self: start;
+    font-size: 13px;
+    margin-top: 3px;
+    margin-bottom: 18px;
+    color: white;
+} 
+.top, .bottom {
+    justify-self: center;
+}
+.grid1, .grid2, .grid3 {
+    justify-self: center;
+}
+.paragraph {
+    margin: 20px 35px;
+    color: #8e838e;
+    font-size: 18px;
+}
+.first {
+    color: #415c8c;
+    margin-bottom: 5px;
+}
+h1 {
+    font-size: 38px;
+    margin-top: 0;
+}
