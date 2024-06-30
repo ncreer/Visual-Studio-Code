@@ -153,6 +153,25 @@
                 <button onclick="toggleView('form')">Add Your Info</button>
             </div>
         </div>
+        <div>
+            <div id="feedback1"></div>
+        <!-- https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form -->
+            <form action="#" method="post">
+                <ul>
+                <li>
+                    <label for="questiontitle">Question Title:</label>
+                    <input type="text" id="questiontitle" name="userquestiontitle" />
+                </li>
+                <li>
+                    <label for="msg">Body:</label>
+                    <textarea id="msg" name="usermessage"></textarea>
+                </li>
+                <li class="button">
+                    <button type="submit">Send your question</button>
+                </li>
+                </ul>
+            </form>
+        </div>
     </main>
     <footer>
         <p>Let's Study &copy; 2024 - Nathan Creer</p>
@@ -204,6 +223,20 @@
                     feedbackElement.innerHTML = 'This functionality is not yet implemented.';
                     // make the feedback element visible.
                     feedbackElement.style.display = "block";
+                    // add a class to move everything down so our message doesn't cover it.
+                    document.body.classList.toggle('moveDown');
+                });
+                const feedbackElement1 = document.getElementById('feedback1');
+                // get the form so we can read what was entered in it.
+                const formElement1 = document.forms[1];
+                // add a 'listener' to wait for a submission of our form. When that happens run the code below.
+                formElement1.addEventListener('submit', function(e) {
+                    // stop the form from doing the default action.
+                    e.preventDefault();
+                    // set the contents of our feedback element to a message letting the user know the form was submitted successfully. Notice that we pull the name that was entered in the form to personalize the message!
+                    feedbackElement1.innerHTML = 'This functionality is not yet implemented.';
+                    // make the feedback element visible.
+                    feedbackElement1.style.display = "block";
                     // add a class to move everything down so our message doesn't cover it.
                     document.body.classList.toggle('moveDown');
                 });
