@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> /*this will be put in css when i get to that, just wanted to make sure it was working*/
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: #3498db;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a id="logo_link" href="index.html">
+            <img class="logo" src="images/logo.png" alt="Lets Study Logo">
+        </a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="inperson.html">In-Person</a>
+            <a href="onlinegroup.html">Online Groups</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Online Groups</h1>
+        <div class="dropdown">
+            <button class="dropbtn">Course Select</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="swap('wdd130')">wdd130</a>
+                <a href="#" onclick="swap('cse110')">cse110</a>
+                <a href="#" onclick="swap('cse170')">cse170</a>
+                <a href="#">More Coming Soon!</a>
+            </div>
+        </div>
+        
+        <div id="contactinfo" class="contactcontainer">
+            <h2>Contact Information</h2>
+            <div id="wdd130list" class="contactlist" style="display: none;">
+                <div class="contactblock">
+                    <p><strong>John Doe</strong></p>
+                    <p>Email: john.doe@example.com</p>
+                    <p>Phone: 123-456-7890</p>
+                </div>
+                <div class="contactblock">
+                    <p><strong>Jane Smith</strong></p>
+                    <p>Email: jane.smith@example.com</p>
+                    <p>Phone: 234-567-8901</p>
+                </div>
+                <div class="contactblock">
+                    <p><strong>Michael Johnson</strong></p>
+                    <p>Email: michael.johnson@example.com</p>
+                    <p>Phone: 345-678-9012</p>
+                </div>
+            </div>
+            
+            <div id="cse110list" class="contactlist" style="display: none;">
+                <div class="contactblock">
+                    <p><strong>Emily Brown</strong></p>
+                    <p>Email: emily.brown@example.com</p>
+                    <p>Phone: 456-789-0123</p>
+                </div>
+                <div class="contactblock">
+                    <p><strong>Daniel Lee</strong></p>
+                    <p>Email: daniel.lee@example.com</p>
+                    <p>Phone: 567-890-1234</p>
+                </div>
+                <div class="contactblock">
+                    <p><strong>Sarah Wilson</strong></p>
+                    <p>Email: sarah.wilson@example.com</p>
+                    <p>Phone: 678-901-2345</p>
+                </div>
+            </div>
+            
+            <div id="cse170list" class="contactlist" style="display: none;">
+                <div class="contactblock">
+                    <p><strong>David Martinez</strong></p>
+                    <p>Email: david.martinez@example.com</p>
+                    <p>Phone: 789-012-3456</p>
+                </div>
+                <div class="contactblock">
+                    <p><strong>Amy Taylor</strong></p>
+                    <p>Email: amy.taylor@example.com</p>
+                    <p>Phone: 890-123-4567</p>
+                </div>
+                <div class="contactblock">
+                    <p><strong>Robert Miller</strong></p>
+                    <p>Email: robert.miller@example.com</p>
+                    <p>Phone: 901-234-5678</p>
+                </div>
+            </div>
+            
+            <form id="infoform" class="contactinfoform" action="#" method="post" style="display: none;">
+                <ul>
+                    <li>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="user_name" placeholder="Your name here" />
+                    </li>
+                    <li>
+                        <label for="mail">Email:</label>
+                        <input type="email" id="mail" name="user_email" />
+                    </li>
+                    <li>
+                        <label for="phonenum">Phone Number:</label>
+                        <input type="tel" id="phonenum" name="user_phonenum" />
+                    </li>
+                    <li>
+                        <label for="formcoursefield">Course:</label>
+                        <select id="formcoursefield" name="formcoursefield">\
+                            <option value="default">Choose Your Course</option>
+                            <option value="wdd130">WDD 130</option>
+                            <option value="cse110">CSE 110</option>
+                            <option value="cse170">CSE 170</option>
+                        </select>
+                      </li>
+                    <li class="button">
+                        <button type="submit">Submit</button>
+                    </li>
+                </ul>
+            </form>
+            
+            <div id="buttonGroup" class="buttongroup">
+                <button onclick="toggleView('contacts')">View Contacts</button>
+                <button onclick="toggleView('form')">Add Your Info</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Let's Study &copy; 2024 - Nathan Creer</p>
+        <p><a href="site-plan.html">Site Plan</a></p>
+        <p><a href="contactus.html">Contact Us</a></p>
+        <div class="social">
+            <a href="https://facebook.com" target="_blank">
+                <img src="images/facebook.png" alt="fb icon">
+            </a>
+            <a href="https://twitter.com" target="_blank">
+                <img src="images/twitter.png" alt="twitter icon">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img src="images/instagram.png" alt="instagram icon">
+            </a>
+        </div>
+    </footer>
+    <script>
+        function swap(course) {
+            document.getElementById('wdd130list').style.display = 'none';
+            document.getElementById('cse110list').style.display = 'none';
+            document.getElementById('cse170list').style.display = 'none';
+            document.getElementById(course + 'list').style.display = 'block';
+            document.getElementById('infoform').style.display = 'none';
+        }
+        function toggleView(view) {
+    var contactContainer = document.getElementById('contactinfo');
+    var form = document.getElementById('infoform');
+    var contactLists = document.getElementsByClassName('contactlist');
+
+    if (view === 'contacts') {
+        contactContainer.style.display = 'block';
+        form.style.display = 'none';
+    } else if (view === 'form') {
+        for (var i = 0; i < contactLists.length; i++) {
+            contactLists[i].style.display = 'none';
+        }
+        form.style.display = 'block';
+    }
+}
+    </script>
+</body>
+</html>
