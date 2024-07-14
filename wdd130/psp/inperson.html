@@ -4,93 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style> /*this will be put in css when i get to that, just wanted to make sure it was working*/
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropbtn {
-            background-color: #3498db;
-            color: white;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-        .dropdown-content a:hover {background-color: #f1f1f1}
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .dropdown:hover .dropbtn {
-            background-color: #2980b9;
-        }
-        form {
-        display: inline-block;
-        padding: 1em;
-        border: 1px solid #ccc;
-        border-radius: 1em;
-        }
-        ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        }
-
-        form li + li {
-        margin-top: 1em;
-        }
-
-        label {
-        display: inline-block;
-        min-width: 90px;
-        text-align: right;
-        }
-
-        input {
-        font: 1em sans-serif;
-        width: 300px;
-        box-sizing: border-box;
-        border: 1px solid #999;
-        }
-
-        input:focus {
-        border-color: #000;
-        }
-
-        .button {
-        padding-left: 90px;
-        }
-
-        button {
-        margin-left: 0.5em;
-        }
-        #feedback {
-            background-color: antiquewhite;
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            padding: .5em;
-            display: none;      
-        }
-        .moveDown {
-            margin-top: 3em;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/inperson.css">
 </head>
 <body>
     <header>
@@ -105,109 +19,111 @@
     </header>
     <main>
         <h1>In-Person Study</h1>
-        <div class="dropdown">
-            <button class="dropbtn">Course Select</button>
-            <div class="dropdown-content">
-                <a href="#" onclick="swap('wdd130')">wdd130</a>
-                <a href="#" onclick="swap('cse110')">cse110</a>
-                <a href="#" onclick="swap('cse170')">cse170</a>
-                <a href="#">More Coming Soon!</a>
+        <div class="calendar-container">
+            <div class="dropdown">
+                <button class="dropbtn">Course Select</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="swap('wdd130')">wdd130</a>
+                    <a href="#" onclick="swap('cse110')">cse110</a>
+                    <a href="#" onclick="swap('cse170')">cse170</a>
+                    <a href="#">More Coming Soon!</a>
+                </div>
             </div>
+            <iframe id="calendar" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FBoise&bgcolor=%23ffffff&showNav=0&showPrint=0&showTabs=0&showCalendars=0&mode=WEEK&src=ODI3ZDAwYmU4M2FmYzM4YjNmYWUyOTkxZTc5Y2FjZDg3NTBmMTM2NzVkMDQ2ZDcwZThmNzI4ZTg3OTkzZWNlZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%232b6d94" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
-        <iframe id="calendar" src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=America%2FBoise&bgcolor=%23ffffff&showNav=0&showPrint=0&showTabs=0&showCalendars=0&mode=WEEK&src=ODI3ZDAwYmU4M2FmYzM4YjNmYWUyOTkxZTc5Y2FjZDg3NTBmMTM2NzVkMDQ2ZDcwZThmNzI4ZTg3OTkzZWNlZkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%232b6d94" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>    
-        <div id="feedback"></div>
-        <!-- https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form -->
-        <form action="#" method="post">
-            <ul>
-              <li>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="user_name" placeholder="Your name here"/>
-              </li>
-              <li>
-                <label for="phonenum">Phone Number:</label>
-                <input type="tel" id="phonenum" name="user_phonenum" />
-              </li>
-              <li>
-                <label for="mail">Email:</label>
-                <input type="email" id="mail" name="user_email" />
-              </li>
-              <li>
-                <label for="location">Location:</label>
-                <input type="text" id="location" name="user_location" placeholder="Enter meeting location"></input>
-              </li>
-              <li>
-                <label for="start-time">Start Time:</label>
-                <select id="start-time" name="start-time">
-                    <option value="08:00">8:00 AM</option>
-                    <option value="08:30">8:30 AM</option>
-                    <option value="09:00">9:00 AM</option>
-                    <option value="09:30">9:30 AM</option>
-                    <option value="10:00">10:00 AM</option>
-                    <option value="10:30">10:30 AM</option>
-                    <option value="11:00">11:00 AM</option>
-                    <option value="11:30">11:30 AM</option>
-                    <option value="12:00">12:00 PM</option>
-                    <option value="12:30">12:30 PM</option>
-                    <option value="13:00">1:00 PM</option>
-                    <option value="13:30">1:30 PM</option>
-                    <option value="14:00">2:00 PM</option>
-                    <option value="14:30">2:30 PM</option>
-                    <option value="15:00">3:00 PM</option>
-                    <option value="15:30">3:30 PM</option>
-                    <option value="16:00">4:00 PM</option>
-                    <option value="16:30">4:30 PM</option>
-                    <option value="17:00">5:00 PM</option>
-                    <option value="17:30">5:30 PM</option>
-                    <option value="18:00">6:00 PM</option>
-                    <option value="18:30">6:30 PM</option>
-                    <option value="19:00">7:00 PM</option>
-                    <option value="19:30">7:30 PM</option>
-                    <option value="20:00">8:00 PM</option>
-                    <option value="20:30">8:30 PM</option>
-                    <option value="21:00">9:00 PM</option>
-                    <option value="21:30">9:30 PM</option>
-                    <option value="22:00">10:00 PM</option>
-                </select>
-              </li>
-              <li>
-                <label for="end-time">End Time:</label>
-                <select id="end-time" name="end-time">
-                    <option value="08:00">8:00 AM</option>
-                    <option value="08:30">8:30 AM</option>
-                    <option value="09:00">9:00 AM</option>
-                    <option value="09:30">9:30 AM</option>
-                    <option value="10:00">10:00 AM</option>
-                    <option value="10:30">10:30 AM</option>
-                    <option value="11:00">11:00 AM</option>
-                    <option value="11:30">11:30 AM</option>
-                    <option value="12:00">12:00 PM</option>
-                    <option value="12:30">12:30 PM</option>
-                    <option value="13:00">1:00 PM</option>
-                    <option value="13:30">1:30 PM</option>
-                    <option value="14:00">2:00 PM</option>
-                    <option value="14:30">2:30 PM</option>
-                    <option value="15:00">3:00 PM</option>
-                    <option value="15:30">3:30 PM</option>
-                    <option value="16:00">4:00 PM</option>
-                    <option value="16:30">4:30 PM</option>
-                    <option value="17:00">5:00 PM</option>
-                    <option value="17:30">5:30 PM</option>
-                    <option value="18:00">6:00 PM</option>
-                    <option value="18:30">6:30 PM</option>
-                    <option value="19:00">7:00 PM</option>
-                    <option value="19:30">7:30 PM</option>
-                    <option value="20:00">8:00 PM</option>
-                    <option value="20:30">8:30 PM</option>
-                    <option value="21:00">9:00 PM</option>
-                    <option value="21:30">9:30 PM</option>
-                    <option value="22:00">10:00 PM</option>
-                </select>
-              </li>
-              <li class="button">
-                <button type="submit">Submit</button>
-              </li>
-            </ul>
-        </form>
+        <div class="form-container">
+            <form action="#" method="post">
+                <ul>
+                    <li>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="user_name" placeholder="Your name here" />
+                    </li>
+                    <li>
+                        <label for="phonenum">Phone Number:</label>
+                        <input type="tel" id="phonenum" name="user_phonenum" />
+                    </li>
+                    <li>
+                        <label for="mail">Email:</label>
+                        <input type="email" id="mail" name="user_email" />
+                    </li>
+                    <li>
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="user_location" placeholder="Enter meeting location" />
+                    </li>
+                    <li>
+                        <label for="start-time">Start Time:</label>
+                        <select id="start-time" name="start-time">
+                            <option value="08:00">8:00 AM</option>
+                            <option value="08:30">8:30 AM</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="09:30">9:30 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="15:30">3:30 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="16:30">4:30 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                            <option value="21:30">9:30 PM</option>
+                            <option value="22:00">10:00 PM</option>
+                        </select>
+                    </li>
+                    <li>
+                        <label for="end-time">End Time:</label>
+                        <select id="end-time" name="end-time">
+                            <option value="08:00">8:00 AM</option>
+                            <option value="08:30">8:30 AM</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="09:30">9:30 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="14:30">2:30 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="15:30">3:30 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                            <option value="16:30">4:30 PM</option>
+                            <option value="17:00">5:00 PM</option>
+                            <option value="17:30">5:30 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                            <option value="21:30">9:30 PM</option>
+                            <option value="22:00">10:00 PM</option>
+                        </select>
+                    </li>
+                    <li class="button">
+                        <button type="submit">Submit</button>
+                    </li>
+                </ul>
+            </form>
+        </div>
     </main>
     <footer>
         <p>Let's Study &copy; 2024 - Nathan Creer</p>
