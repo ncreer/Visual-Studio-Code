@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/onlinegroup.css">
     <style> /*this will be put in css when i get to that, just wanted to make sure it was working*/
         .dropdown {
             position: relative;
@@ -63,114 +64,116 @@
             </div>
         </div>
         
-        <div id="contactinfo" class="contactcontainer">
-            <h2>Contact Information</h2>
-            <div id="wdd130list" class="contactlist" style="display: none;">
-                <div class="contactblock">
-                    <p><strong>John Doe</strong></p>
-                    <p>Email: john.doe@example.com</p>
-                    <p>Phone: 123-456-7890</p>
+        <div class="content">
+            <div id="contactinfo" class="contactcontainer">
+                <h2>Contact Information</h2>
+                <div id="wdd130list" class="contactlist" style="display: none;">
+                    <div class="contactblock">
+                        <p><strong>John Doe</strong></p>
+                        <p>Email: john.doe@example.com</p>
+                        <p>Phone: 123-456-7890</p>
+                    </div>
+                    <div class="contactblock">
+                        <p><strong>Jane Smith</strong></p>
+                        <p>Email: jane.smith@example.com</p>
+                        <p>Phone: 234-567-8901</p>
+                    </div>
+                    <div class="contactblock">
+                        <p><strong>Michael Johnson</strong></p>
+                        <p>Email: michael.johnson@example.com</p>
+                        <p>Phone: 345-678-9012</p>
+                    </div>
                 </div>
-                <div class="contactblock">
-                    <p><strong>Jane Smith</strong></p>
-                    <p>Email: jane.smith@example.com</p>
-                    <p>Phone: 234-567-8901</p>
+                
+                <div id="cse110list" class="contactlist" style="display: none;">
+                    <div class="contactblock">
+                        <p><strong>Emily Brown</strong></p>
+                        <p>Email: emily.brown@example.com</p>
+                        <p>Phone: 456-789-0123</p>
+                    </div>
+                    <div class="contactblock">
+                        <p><strong>Daniel Lee</strong></p>
+                        <p>Email: daniel.lee@example.com</p>
+                        <p>Phone: 567-890-1234</p>
+                    </div>
+                    <div class="contactblock">
+                        <p><strong>Sarah Wilson</strong></p>
+                        <p>Email: sarah.wilson@example.com</p>
+                        <p>Phone: 678-901-2345</p>
+                    </div>
                 </div>
-                <div class="contactblock">
-                    <p><strong>Michael Johnson</strong></p>
-                    <p>Email: michael.johnson@example.com</p>
-                    <p>Phone: 345-678-9012</p>
+                
+                <div id="cse170list" class="contactlist" style="display: none;">
+                    <div class="contactblock">
+                        <p><strong>David Martinez</strong></p>
+                        <p>Email: david.martinez@example.com</p>
+                        <p>Phone: 789-012-3456</p>
+                    </div>
+                    <div class="contactblock">
+                        <p><strong>Amy Taylor</strong></p>
+                        <p>Email: amy.taylor@example.com</p>
+                        <p>Phone: 890-123-4567</p>
+                    </div>
+                    <div class="contactblock">
+                        <p><strong>Robert Miller</strong></p>
+                        <p>Email: robert.miller@example.com</p>
+                        <p>Phone: 901-234-5678</p>
+                    </div>
+                </div>
+                <div id="feedback"></div>
+                <form id="infoform" class="contactinfoform" action="#" method="post" style="display: none;">
+                    <ul>
+                        <li>
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="user_name" placeholder="Your name here" />
+                        </li>
+                        <li>
+                            <label for="mail">Email:</label>
+                            <input type="email" id="mail" name="user_email" />
+                        </li>
+                        <li>
+                            <label for="phonenum">Phone Number:</label>
+                            <input type="tel" id="phonenum" name="user_phonenum" />
+                        </li>
+                        <li>
+                            <label for="formcoursefield">Course:</label>
+                            <select id="formcoursefield" name="formcoursefield">\
+                                <option value="default">Choose Your Course</option>
+                                <option value="wdd130">WDD 130</option>
+                                <option value="cse110">CSE 110</option>
+                                <option value="cse170">CSE 170</option>
+                            </select>
+                          </li>
+                        <li class="button">
+                            <button type="submit">Submit</button>
+                        </li>
+                    </ul>
+                </form>
+                
+                <div id="buttonGroup" class="buttongroup">
+                    <button onclick="toggleView('contacts')">View Contacts</button>
+                    <button onclick="toggleView('form')">Add Your Info</button>
                 </div>
             </div>
-            
-            <div id="cse110list" class="contactlist" style="display: none;">
-                <div class="contactblock">
-                    <p><strong>Emily Brown</strong></p>
-                    <p>Email: emily.brown@example.com</p>
-                    <p>Phone: 456-789-0123</p>
-                </div>
-                <div class="contactblock">
-                    <p><strong>Daniel Lee</strong></p>
-                    <p>Email: daniel.lee@example.com</p>
-                    <p>Phone: 567-890-1234</p>
-                </div>
-                <div class="contactblock">
-                    <p><strong>Sarah Wilson</strong></p>
-                    <p>Email: sarah.wilson@example.com</p>
-                    <p>Phone: 678-901-2345</p>
-                </div>
-            </div>
-            
-            <div id="cse170list" class="contactlist" style="display: none;">
-                <div class="contactblock">
-                    <p><strong>David Martinez</strong></p>
-                    <p>Email: david.martinez@example.com</p>
-                    <p>Phone: 789-012-3456</p>
-                </div>
-                <div class="contactblock">
-                    <p><strong>Amy Taylor</strong></p>
-                    <p>Email: amy.taylor@example.com</p>
-                    <p>Phone: 890-123-4567</p>
-                </div>
-                <div class="contactblock">
-                    <p><strong>Robert Miller</strong></p>
-                    <p>Email: robert.miller@example.com</p>
-                    <p>Phone: 901-234-5678</p>
-                </div>
-            </div>
-            <div id="feedback"></div>
-            <form id="infoform" class="contactinfoform" action="#" method="post" style="display: none;">
-                <ul>
+            <div class="forum">
+                <div id="feedback1"></div>
+                <!-- https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form -->
+                <form action="#" method="post">
+                    <ul>
                     <li>
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="user_name" placeholder="Your name here" />
+                        <label for="questiontitle">Question Title:</label>
+                        <input type="text" id="questiontitle" name="userquestiontitle" />
                     </li>
                     <li>
-                        <label for="mail">Email:</label>
-                        <input type="email" id="mail" name="user_email" />
+                        <label for="msg">Body:</label>
+                        <textarea id="msg" name="usermessage"></textarea>
                     </li>
-                    <li>
-                        <label for="phonenum">Phone Number:</label>
-                        <input type="tel" id="phonenum" name="user_phonenum" />
-                    </li>
-                    <li>
-                        <label for="formcoursefield">Course:</label>
-                        <select id="formcoursefield" name="formcoursefield">\
-                            <option value="default">Choose Your Course</option>
-                            <option value="wdd130">WDD 130</option>
-                            <option value="cse110">CSE 110</option>
-                            <option value="cse170">CSE 170</option>
-                        </select>
-                      </li>
                     <li class="button">
-                        <button type="submit">Submit</button>
+                        <button type="submit">Send your question</button>
                     </li>
-                </ul>
-            </form>
-            
-            <div id="buttonGroup" class="buttongroup">
-                <button onclick="toggleView('contacts')">View Contacts</button>
-                <button onclick="toggleView('form')">Add Your Info</button>
+                    </ul>
+                </form>
             </div>
-        </div>
-        <div>
-            <div id="feedback1"></div>
-        <!-- https://developer.mozilla.org/en-US/docs/Learn/Forms/Your_first_form -->
-            <form action="#" method="post">
-                <ul>
-                <li>
-                    <label for="questiontitle">Question Title:</label>
-                    <input type="text" id="questiontitle" name="userquestiontitle" />
-                </li>
-                <li>
-                    <label for="msg">Body:</label>
-                    <textarea id="msg" name="usermessage"></textarea>
-                </li>
-                <li class="button">
-                    <button type="submit">Send your question</button>
-                </li>
-                </ul>
-            </form>
         </div>
     </main>
     <footer>
