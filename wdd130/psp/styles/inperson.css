@@ -69,6 +69,7 @@ h1 {
 }
 .dropbtn {
     background-color: #3498db;
+    background-color: #143447;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -99,6 +100,7 @@ h1 {
 }
 .dropdown:hover .dropbtn {
     background-color: #2980b9;
+    background-color: #0d2330;
 }
 form {
     display: inline-block;
@@ -137,6 +139,7 @@ button {
     margin-left: 0.5em;
     border: none;
     background-color: #3498db;
+    background-color: #143447;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -144,6 +147,7 @@ button {
 }
 button:hover {
     background-color: #2980b9;
+    background-color: #0d2330;
 }
 #feedback {
     background-color: antiquewhite;

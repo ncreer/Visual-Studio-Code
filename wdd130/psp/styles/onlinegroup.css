@@ -146,6 +146,7 @@ form textarea:focus {
 form button {
     padding: 10px 20px;
     background-color: #3498db;
+    background-color: #143447;
     color: white;
     border: none;
     cursor: pointer;
@@ -153,6 +154,7 @@ form button {
 }
 form button:hover {
     background-color: #2980b9;
+    background-color: #0d2330;
 }
 .buttongroup {
     margin-top: 20px;
